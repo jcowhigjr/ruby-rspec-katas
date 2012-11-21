@@ -11,8 +11,8 @@ This is a scaffold for fast starting code with Ruby and RSpec
 
 ## Usage
 
-    `bundle install`
-    `bundle exec guard`
+    bundle install
+    bundle exec guard
     start to code!
 
 
