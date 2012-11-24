@@ -10,10 +10,13 @@ This is a scaffold for fast starting code with Ruby and RSpec
 * [Ruby](http://www.ruby-lang.org/)
 
 ## Usage
-
+	
+    git clone https://github.com/jguitar/ruby-rspec-katas.git
+    cd ruby-rspec-katas
     bundle install
     bundle exec guard
-    start to code!
+    
+Start to code!
 
 
 ## Components
