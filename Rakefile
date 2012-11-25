@@ -1,11 +1,12 @@
 KLASS_NAME_DEFAULT = 'KlassName'
+FILE_NAME_DEFAULT = 'klass_name'
 
 LIB_TEMPLATE =
 "class #{KLASS_NAME_DEFAULT}
 end"
 
 SPEC_TEMPLATE =
-"require '#{KLASS_NAME_DEFAULT}'
+"require '#{FILE_NAME_DEFAULT}'
 
 describe #{KLASS_NAME_DEFAULT} do
   it 'works!' do
@@ -17,8 +18,9 @@ def get_lib_template(klass_name)
   LIB_TEMPLATE.gsub(KLASS_NAME_DEFAULT, klass_name)
 end
 
-def get_spec_template(klass_name)
-  SPEC_TEMPLATE.gsub(KLASS_NAME_DEFAULT, klass_name)
+def get_spec_template(klass_name, file_name)
+  result = SPEC_TEMPLATE.gsub(KLASS_NAME_DEFAULT, klass_name)
+  result = result.gsub(FILE_NAME_DEFAULT, file_name)
 end
 
 def get_klass_name(file_name)
@@ -39,7 +41,7 @@ rule %r{spec\/.+_spec\.rb} => ['spec'] do |file|
   File.open(file.name, "w+") do |f|
     base_name = File.basename(file.name, '_spec.rb')
     klass_name = get_klass_name(base_name)
-    f.write(get_spec_template(klass_name))
+    f.write(get_spec_template(klass_name, base_name))
   end
 end
 
