@@ -10,25 +10,27 @@ This is a scaffold for fast starting code with Ruby and RSpec
 * [Ruby](http://www.ruby-lang.org/)
 
 ## Install
-	
-    git clone https://github.com/jguitar/ruby-rspec-katas.git
-    cd ruby-rspec-katas
+
+    git clone https://github.com/jguitar/ruby-rspec-katas.git [kata-name]
+    cd [kata-name]
     bundle install
 
 ## Usage
 
-### Create a default lib/kata_class.rb and spec/kata_class_spec.rb
+#### Create a default lib/kata_class.rb and spec/kata_class_spec.rb
 
     rake
 
 ### Create specific file names and class: lib/bingo.rb and spec/bingo_spec.rb
 
-    rake create[bingo]
+    rake create[kata-name]
+
+(**Brackets are mandatory**)
 
 ### Run guard
 
-    bundle exec guard
-    
+    guard
+
 *Start to code!*
 
 ## Components
